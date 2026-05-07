@@ -1,7 +1,5 @@
 // AULA 06/05 - INTRODUÇÃO A JAVA SCRIPT
 
-import { a } from "vitest/dist/chunks/suite.qtkXWc6R";
-
 console.log("Bemn vidos a ppi");
 
 // VARIÁVEIS
