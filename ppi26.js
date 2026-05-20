@@ -225,7 +225,7 @@ console.log(
 // object
 const pessoa = new Object({
   nome: 'Zé vaqueiro', 
-  idade: 25,
+  idade: 25, 
   profissao: 'cantor/Compositor'
 });
 
@@ -258,18 +258,50 @@ const p4 = new Product('iPhone Pro Max', 256, 16, 7000, 15, 'Celular');
 const p5 = new Product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
 const p6 = new Product('Macbook Pro', 1024, 24, 25000, 35, 'Notebook');
 
-const estoque = [p1, p2, p3];
+const estoque = [ {...p1}, {...p2}, {...p3}, {...p4}, {...p5}, {...p6}];
 console.log(estoque);
 
 
 /* Desafio 1
 
  a) valor total de todos os produtos no estoque 
+
+ 
  b) Ordene os produtos por nome (crescente/decrescente)
  c) Ordene os produtos por preço (crescente/decrescente)
  d) Filtre proutos de acordo com uma categoria
 
 */
+
+
+const valorTotal =  Product.reduce((Product,total => {
+  return total + (Product.price * Product.qty);
+},0)
+
+// console.log(valorTotal);
+
+
+// const nomeCrescente = [...produtos].sort((a, b) => 
+//     a.nome.localeCompare(b.nome)
+// );
+ 
+// console.log(nomeCrescente)
+
+
+// const nomeDecrescente = [...produtos].sort((a, b) => 
+//     b.nome.localeCompare(a.nome)
+// );
+ 
+// console.log(nomeDecrescente)
+
+
+
+
+
+  
+
+
+
 
 
 
