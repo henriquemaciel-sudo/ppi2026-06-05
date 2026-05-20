@@ -223,12 +223,55 @@ console.log(
 );
 
 // object
-const pessoa = {
+const pessoa = new Object({
   nome: 'Zé vaqueiro', 
   idade: 25,
   profissao: 'cantor/Compositor'
-};
+});
 
 console.log(pessoa.nome);
 console.log(pessoa['nome']);
+console.log(Object.keys(pessoa));
+console.log(Object.values(pessoa));
+
+const pessoa2 = { ...pessoa, hobby: 'Vaquejada' };
+console.log(pessoa2);
+
+// ATRIBUIÇÃO POR DESESTRUTURAÇÃO
+const { nome, idade } = pessoa2;
+console.log(nome, idade);
+
+//CONSTRUTOR
+function Product(name, sto, ram, price, qty, category){
+  this.name = name;
+  this.name = sto;
+  this.name = ram;
+  this.name = price;
+  this.name = qty;
+  this.name = category;
+}
+
+const p1 = new Product('iPhone', 256, 16, 5000, 10, 'Celular');
+const p2 = new Product('iPad', 512, 16, 8000, 20, 'Tablet');
+const p3 = new Product('Macbook', 1024, 24, 15000, 30, 'Notebook');
+const p4 = new Product('iPhone Pro Max', 256, 16, 7000, 15, 'Celular');
+const p5 = new Product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
+const p6 = new Product('Macbook Pro', 1024, 24, 25000, 35, 'Notebook');
+
+const estoque = [p1, p2, p3];
+console.log(estoque);
+
+
+/* Desafio 1
+
+ a) valor total de todos os produtos no estoque 
+ b) Ordene os produtos por nome (crescente/decrescente)
+ c) Ordene os produtos por preço (crescente/decrescente)
+ d) Filtre proutos de acordo com uma categoria
+
+*/
+
+
+
+
 
