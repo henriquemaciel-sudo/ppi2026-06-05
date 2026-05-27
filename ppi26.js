@@ -278,21 +278,47 @@ const valorTotal =  Product.reduce((Product,total => {
   return total + (Product.price * Product.qty);
 },0)
 
-// console.log(valorTotal);
+ console.log(valorTotal)
 
 
-// const nomeCrescente = [...produtos].sort((a, b) => 
-//     a.nome.localeCompare(b.nome)
-// );
+ //LETRA B
+
+ const nameCrescente = [...product].sort((a, b) => 
+     a.name.localeCompare(b.name)
+ );
  
-// console.log(nomeCrescente)
+ console.log(nameCrescente)
 
 
-// const nomeDecrescente = [...produtos].sort((a, b) => 
-//     b.nome.localeCompare(a.nome)
-// );
+ const nameDecrescente = [...product].sort((a, b) => 
+    b.name.localeCompare(a.name)
+ );
  
-// console.log(nomeDecrescente)
+ console.log(nameDecrescente)
+
+ //LETRA C
+
+ const preçoCrescente = [...product].sort((a, b) => 
+     a.price.localeCompare(b.price)
+ );
+ 
+ console.log(preçoCrescente)
+
+
+ const preçoDecrescente = [...product].sort((a, b) => 
+    b.preço.localeCompare(a.preço)
+ );
+
+ console.log(preçoDecrescente)
+ 
+
+
+ 
+
+
+
+
+
 
 
 
