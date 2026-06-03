@@ -267,91 +267,99 @@ const valorTotal = estoque
   .reduce((valor, p) => valor + p.price * p.qty, 0)
   .toFixed(2);
 
-console.log('valor total: R$ ${valorTotal}');
+console.log("valor total: R$ ${valorTotal}");
 
+//LETRA B
 
+//CRESCENTE
 
- //LETRA B
+const nameCrescente = [...estoque].sort((a, b) => a.name.localeCompare(b.name));
 
- //CRESCENTE
-
- const nameCrescente = [...estoque].sort((a, b) => 
-     a.name.localeCompare(b.name)
- );
- 
- console.log(nameCrescente)
+console.log(nameCrescente);
 
 //DECRESCENTE
- const nameDecrescente = [...estoque].sort((a, b) => 
-    b.name.localeCompare(a.name)
- );
- 
- console.log(nameDecrescente)
+const nameDecrescente = [...estoque].sort((a, b) =>
+  b.name.localeCompare(a.name),
+);
 
- //LETRA C
+console.log(nameDecrescente);
 
- //CRESCENTE
+//LETRA C
 
- const preçoCrescente = [...estoque].sort((a, b) => 
-     a.price - b.price
- );
- 
- console.log(preçoCrescente)
+//CRESCENTE
+
+const preçoCrescente = [...estoque].sort((a, b) => a.price - b.price);
+
+console.log(preçoCrescente);
 
 //DECRESCENTE
- const preçoDecrescente = [...estoque].sort((a, b) => 
-    b.price - a.price
- );
+const preçoDecrescente = [...estoque].sort((a, b) => b.price - a.price);
 
- console.log(preçoDecrescente);
+console.log(preçoDecrescente);
 
- //LETRA D
+//LETRA D
 
- //FILTRAR POR CATEGORIA0,
+//FILTRAR POR CATEGORIA0,
 
- const categoria = "Notebook";
+const categoria = "Notebook";
 
- for (let i = 0; i < estoque.length; i++) {
+for (let i = 0; i < estoque.length; i++) {
   const product = estoque[i];
   if (product.category === categoria) {
-
-    console.log({product} );
+    console.log({ product });
   }
-    
-  
- }
+}
 
- 
-//  const produtosPorCategoria = estoque.filter((product) => 
+//  const produtosPorCategoria = estoque.filter((product) =>
 //     product.category === categoria
 //  );
 
 //  console.log(produtosPorCategoria);
- 
+
+// DESAFIO 2
+
+
+//PARTE 1
+const alunos = [
+  { nome: "Ana", notas: [8, 7, 9] },
+  { nome: "Bruno", notas: [5, 6, 5] },
+  { nome: "Carla", notas: [9, 9, 10] },
+  { nome: "Diego", notas: [6, 7, 8] },
+];
+
+const aprovados = alunos
+  .map((aluno) => {const soma = aluno.notas.reduce((total, nota) => total + nota,0);
+
+    return {
+      nome: aluno.nome,
+      media: soma / aluno.notas.length
+    };
+  })
+  .filter((aluno) => aluno.media >= 7)
+  .sort((a, b) => b.media - a.media);
+
+console.log(aprovados);
 
 
 
+//PARTE 2
 
+const filmes = [
+  { titulo: "O Senhor dos Anéis", ano: 2001, genero: "fantasia" },
+  { titulo: "Matrix", ano: 1999, genero: "ficção" },
+  { titulo: "Interestelar", ano: 2014, genero: "ficção" },
+  { titulo: "Divertida Mente", ano: 2015, genero: "animação" },
+];
 
+function buscarFilmes(genero) {
+  return filmes.filter(fil => fil.genero === genero).sort((a, b) => b.ano - a.ano) 
+  .map(fil => `${fil.titulo} (${fil.ano}) - ${fil.genero}`);
+}
 
-
- 
-
-
-
-
-
-
-
-
-
-
+console.log(buscarFilmes("ficção"));
   
 
-
-
-
-
-
-
+  
+    
+    
 
